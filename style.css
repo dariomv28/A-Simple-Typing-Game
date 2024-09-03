@@ -13,6 +13,8 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    background: linear-gradient(to bottom left, #007acc, #6DD5FA, #FFFFFF);
+    
 }
 
 .wrapper {
@@ -51,7 +53,7 @@ body {
     padding: 12px 0;
     border-top: 1px solid black;
     justify-content: space-between;
-    align-items: center;
+    align-items: center ;
 }
 
 .content .result-details {
@@ -88,6 +90,7 @@ body {
 }
 
 .content button {
+    font-weight: bold;
     border: none;
     outline: none;
     width: 105px;
@@ -96,4 +99,14 @@ body {
     font-size: 16px;
     border-radius: 15px;
     cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.content button:hover {
+    background-color: lightcoral; 
+    opacity: 0.8; 
+}
+
+.typing-text span .active {
+    background-color: #007acc;
 }
