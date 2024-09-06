@@ -57,12 +57,12 @@ function typing() {
         }
     
         if (insertedChar != null) {
-            if(insertedChar == allCharacters[charidx].innerText) {
-                allCharacters[idx].innerText.classList.add("correct");
+            if(insertedChar === allCharacters[charidx].innerText) {
+                allCharacters[charidx].classList.add("correct");
             }
             else {
                 mistakes++;
-                allCharacters[idx].innerText.classList.add("incorrect");
+                allCharacters[charidx].classList.add("incorrect");
             }
             charidx++;
         }
@@ -77,7 +77,9 @@ function typing() {
         }
 
         allCharacters.forEach(span => span.classList.remove("active"));
-        allCharacters[charidx].classList.add("active");
+        if(allCharacters[charidx]) {
+            allCharacters[charidx].classList.add("active")
+        }
         let wpm = Math.round(((charidx - mistakes)/5) / (maxTime - timeLeft) * 60);
         wpm = wpm < 0 || wpm == null || wpm == Infinity? 0 : wpm;
         WPMtag.innerText = wpm;
@@ -117,3 +119,5 @@ function tryAgain() {
 }
 
 load();
+inputBox.addEventListener("input", typing);
+buttonTag.addEventListener("click", tryAgain);
