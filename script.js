@@ -36,11 +36,11 @@ inputBox = document.querySelector(".wrapper .input-field");
 
 
 function load() {
-    let index = Math.floor(Math.random * paragraphs.length);
+    let index = Math.floor(Math.random() * paragraphs.length);
     text.innerHTML = "";
     paragraphs[index].split("").forEach(char => {
         let span = `<span>${char}</span>`
-        text += span;
+        text.innerHTML += span;
     });
     text.querySelectorAll("span")[0].classList.add("active");
     document.addEventListener("keydown", () => inputBox.focus());
@@ -115,3 +115,5 @@ function tryAgain() {
     mistaketag.innerText = 0;
     CPMtag.innerText = 0;
 }
+
+load();

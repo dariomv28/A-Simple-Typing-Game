@@ -107,6 +107,20 @@ body {
     opacity: 0.8; 
 }
 
-.typing-text span .active {
+.typing-text p span .active {
     background-color: #007acc;
 }
+
+.typing-text p span .correct {
+    color:  rgb(153, 255, 0);
+    outline: solid;
+    background: rgb(182, 247, 86);
+
+}
+
+.typing-text p span.incorrect {
+    color: rgb(215, 10, 10);
+    outline: solid;
+    background: rgb(243, 106, 106);
+}
+
