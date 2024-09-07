@@ -107,11 +107,11 @@ body {
     opacity: 0.8; 
 }
 
-.typing-text p span .active {
+.typing-text p span.active {
     background-color: #007acc;
 }
 
-.typing-text p span .correct {
+.typing-text p span.correct {
     color:  rgb(153, 255, 0);
     outline: solid;
     background: rgb(182, 247, 86);
@@ -128,7 +128,7 @@ body {
     z-index: -999;
     position: absolute;
 }
-.typing-text p span .active::before {
+.typing-text p span.active::before {
     position: absolute;
     content: "";
     height: 2px;

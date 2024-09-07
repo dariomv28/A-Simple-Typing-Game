@@ -57,7 +57,7 @@ function typing() {
         }
     
         if (insertedChar != null) {
-            if(insertedChar === allCharacters[charidx].innerText) {
+            if(insertedChar == allCharacters[charidx].innerText) {
                 allCharacters[charidx].classList.add("correct");
             }
             else {
