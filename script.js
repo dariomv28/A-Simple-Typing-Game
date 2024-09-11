@@ -52,6 +52,7 @@ function typing() {
     let insertedChar = inputBox.value.split("")[charidx];
     if (charidx < allCharacters.length - 1 && timeLeft > 0) {
         if (!isTyping) {
+            timetag.innerText = timeLeft;
             timer = setInterval(setTime, 1000);
             isTyping = true;
         }
