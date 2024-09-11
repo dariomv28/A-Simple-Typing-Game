@@ -21,25 +21,27 @@ body {
     background-color: white;
     border-radius: 25px;
     padding: 40px;
-    width: 800px;
+    width: 1200px;
+    height: auto;
 }
 
 .wrapper .content-box {
-    padding: 13px 20px 0;
-    border-radius: 15px;
-    border: 2px solid black;
+    padding: 10px 10px 0;
+
 }
 
 .content-box .typing-text {
     max-height: 255px;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .typing-text p{
-    font-size: 21px;
-    word-break: break-all;
+    font-size: 30px;
+    word-break: break-word; 
     text-align: justify;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
+    white-space: pre-wrap; 
+    overflow-wrap: break-word; 
 }
 
 .typing-text::-webkit-scrollbar {
@@ -48,12 +50,10 @@ body {
 
 .content-box .content {
     display: flex;
-    justify-content: space-between;
     margin-top: 20px;
     padding: 12px 0;
-    border-top: 1px solid black;
-    justify-content: space-between;
     align-items: center ;
+    justify-content: space-between;
 }
 
 .content .result-details {
@@ -64,13 +64,13 @@ body {
 
 .result-details li {
     height: 22px;
-    display: flex;
+    display:-webkit-inline-flex;
     list-style: none;
     align-items: center;
 }
 
 .result-details li p{
-    font-size: 19px;
+    font-size: 20px;
 
 }
 
@@ -81,8 +81,7 @@ body {
 }
 
 .result-details li:not(:first-child){
-    padding-left: 22px;
-    border-left: 1px solid black;
+    padding-left: 10px;
 }
 
 .result-details li b{
@@ -96,7 +95,7 @@ body {
     width: 105px;
     background-color: aquamarine;
     padding: 8px 0;
-    font-size: 16px;
+    font-size: 20px;
     border-radius: 15px;
     cursor: pointer;
     transition: background-color 0.3s ease, opacity 0.3s ease;
@@ -106,23 +105,21 @@ body {
     background-color: lightcoral; 
     opacity: 0.8; 
 }
-
+.typing-text p span {
+    position: relative;
+    color: lightgray;
+}
 .typing-text p span.active {
-    background-color: #007acc;
+    color: lightgray;
 }
 
 .typing-text p span.correct {
     color:  rgb(153, 255, 0);
-    outline: solid;
-    background: rgb(182, 247, 86);
-
 }
-
 .typing-text p span.incorrect {
-    color: rgb(215, 10, 10);
-    outline: solid;
-    background: rgb(243, 106, 106);
+    color: rgb(255, 0, 0);
 }
+
 .wrapper .input-field {
     opacity: 0;
     z-index: -999;
@@ -131,17 +128,17 @@ body {
 .typing-text p span.active::before {
     position: absolute;
     content: "";
-    height: 2px;
-    width: 100%;
+    height: 100%;
+    width: 3px;
     bottom: 0;
     left: 0;
-    opacity: 0;
-    border-radius: 5px;
-    background: #007acc;
-    animation: blink 1s ease-in-out infinite;
+    opacity: 0.75;
+    border-radius: 10px;
+    background: #0099ff;
+    animation: blink 0.75s ease-in-out infinite;
 }
-@keyframes blink {
+@keyframes blink{
     50% {
-        opacity: 1;
+        opacity: 0.75;
     }
 }

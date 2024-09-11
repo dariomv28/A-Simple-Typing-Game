@@ -75,7 +75,6 @@ function typing() {
                 allCharacters[charidx].classList.remove("correct", "incorrect");
             }
         }
-
         allCharacters.forEach(span => span.classList.remove("active"));
         if(allCharacters[charidx]) {
             allCharacters[charidx].classList.add("active")
