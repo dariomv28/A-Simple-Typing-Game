@@ -109,9 +109,9 @@ function tryAgain() {
     clearInterval(timer);
     inputBox.value = "";
     timeLeft = maxTime;
-    timetag.innerText = timeLeft;
+    timetag.innerText = "";
     charidx = 0;
-    mistakes = 0;
+    mistakes =  0;
     isTyping = 0;
     WPMtag.innerText = 0;
     mistaketag.innerText = 0;
