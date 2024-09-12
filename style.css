@@ -135,10 +135,4 @@ body {
     opacity: 0.75;
     border-radius: 10px;
     background: #0099ff;
-    animation: blink 0.75s ease-in-out infinite;
-}
-@keyframes blink{
-    50% {
-        opacity: 0.75;
-    }
 }
