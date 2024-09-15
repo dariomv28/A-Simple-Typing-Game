@@ -21,27 +21,36 @@ body {
     background-color: white;
     border-radius: 25px;
     padding: 40px;
-    width: 1200px;
+    width: 1300px;
     height: auto;
 }
 
+.wrapper .input-field {
+    opacity: 0;
+    z-index: -999;
+    position: absolute;
+}
+
+
 .wrapper .content-box {
     padding: 10px 10px 0;
-
 }
 
 .content-box .typing-text {
-    max-height: 255px;
-    overflow: hidden;
+    max-height: 350px;
+    overflow: auto;
 }
 
 .typing-text p{
     font-size: 30px;
-    word-break: break-word; 
-    text-align: justify;
+    word-break: break-word;
+    text-align: justify ;
     letter-spacing: 3px;
     white-space: pre-wrap; 
-    overflow-wrap: break-word; 
+    overflow-wrap: break-word;
+    text-indent: 20px;
+    padding-right: 25px;
+    line-height: 42px;
 }
 
 .typing-text::-webkit-scrollbar {
@@ -71,7 +80,6 @@ body {
 
 .result-details li p{
     font-size: 20px;
-
 }
 
 .result-details li span{
@@ -108,9 +116,10 @@ body {
 .typing-text p span {
     position: relative;
     color: lightgray;
+    padding-left: 0px;
 }
 .typing-text p span.active {
-    color: lightgray;
+    color: #0099ff;
 }
 
 .typing-text p span.correct {
@@ -120,19 +129,15 @@ body {
     color: rgb(255, 0, 0);
 }
 
-.wrapper .input-field {
-    opacity: 0;
-    z-index: -999;
-    position: absolute;
-}
+
 .typing-text p span.active::before {
-    position: absolute;
+    position : absolute;
     content: "";
-    height: 100%;
+    height: 40px;
     width: 3px;
     bottom: 0;
     left: 0;
-    opacity: 0.75;
     border-radius: 10px;
     background: #0099ff;
 }
+

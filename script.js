@@ -40,7 +40,9 @@ function load() {
     text.innerHTML = "";
     paragraphs[index].split("").forEach(char => {
         let span = `<span>${char}</span>`
-        text.innerHTML += span;
+
+        text.innerHTML += span;  // Each character is wrapped by a span tag
+
     });
     text.querySelectorAll("span")[0].classList.add("active");
     document.addEventListener("keydown", () => inputBox.focus());
@@ -50,7 +52,7 @@ function load() {
 function typing() {
     let allCharacters = text.querySelectorAll("span");
     let insertedChar = inputBox.value.split("")[charidx];
-    if (charidx < allCharacters.length - 1 && timeLeft > 0) {
+    if (charidx < allCharacters.length && timeLeft > 0) {
         if (!isTyping) {
             timetag.innerText = timeLeft;
             timer = setInterval(setTime, 1000);
@@ -60,12 +62,15 @@ function typing() {
         if (insertedChar != null) {
             if(insertedChar == allCharacters[charidx].innerText) {
                 allCharacters[charidx].classList.add("correct");
+
+
             }
             else {
                 mistakes++;
                 allCharacters[charidx].classList.add("incorrect");
             }
             charidx++;
+            
         }
         else {
             if (charidx > 0) {
@@ -80,7 +85,7 @@ function typing() {
         if(allCharacters[charidx]) {
             allCharacters[charidx].classList.add("active")
         }
-        let wpm = Math.round(((charidx - mistakes)/5) / (maxTime - timeLeft) * 60);
+        let wpm = Math.round(((charidx  - mistakes)/5) / (maxTime - timeLeft) *60);
         wpm = wpm < 0 || wpm == null || wpm == Infinity? 0 : wpm;
         WPMtag.innerText = wpm;
         mistaketag.innerText = mistakes;
@@ -113,9 +118,9 @@ function tryAgain() {
     charidx = 0;
     mistakes =  0;
     isTyping = 0;
-    WPMtag.innerText = 0;
-    mistaketag.innerText = 0;
-    CPMtag.innerText = 0;
+    WPMtag.innerText = "";
+    mistaketag.innerText = "";
+    CPMtag.innerText = "";
 }
 
 load();
