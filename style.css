@@ -21,7 +21,7 @@ body {
     background-color: white;
     border-radius: 25px;
     padding: 40px;
-    width: 1300px;
+    width: 1200px;
     height: auto;
 }
 
@@ -58,7 +58,7 @@ body {
 }
 
 .content-box .content {
-    display: flex;
+    display: block; 
     margin-top: 20px;
     padding: 12px 0;
     align-items: center ;
@@ -69,6 +69,7 @@ body {
     display: flex;
     width: calc(100% - 140px);
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .result-details li {
@@ -141,3 +142,21 @@ body {
     background: #0099ff;
 }
 
+
+.content .info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.info li {
+    height: 22px;
+    display:-webkit-inline-flex;
+    list-style: none;
+    align-items: center;
+}
+
+.clear {
+    clear: both;
+    height: 20px; 
+}

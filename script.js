@@ -123,6 +123,10 @@ function tryAgain() {
     CPMtag.innerText = "";
 }
 
+function setting() {
+    
+}
+
 load();
 inputBox.addEventListener("input", typing);
 buttonTag.addEventListener("click", tryAgain);
