@@ -97,7 +97,13 @@ body {
     font-weight: 500;
 }
 
-.content button {
+
+
+
+
+
+
+.content .result-details .try-again-button {
     font-weight: bold;
     border: none;
     outline: none;
@@ -107,13 +113,20 @@ body {
     font-size: 20px;
     border-radius: 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
+    transition: background-color 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
 }
 
-.content button:hover {
+.content .result-details .try-again-button:hover {
     background-color: lightcoral; 
     opacity: 0.8; 
+    box-shadow: 2px 3px 11px 5px rgba(0,0,0,0.42);
 }
+
+
+
+
+
+
 .typing-text p span {
     position: relative;
     color: lightgray;
@@ -159,4 +172,55 @@ body {
 .clear {
     clear: both;
     height: 5px; 
+}
+
+.adjust-time {
+    font-weight: bold;
+    border: none;
+    outline: none;
+    width: 105px;
+    background-color: aquamarine;
+    padding: 8px 0;
+    font-size: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.adjust-time:hover {
+    opacity: 0.35;
+}
+
+.adjust-paragraph {
+    font-weight: bold;
+    border: none;
+    outline: none;
+    width: 105px;
+    background-color: aquamarine;
+    padding: 8px 0;
+    font-size: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.adjust-paragraph:hover {
+    opacity: 0.35;
+}
+
+.darklight-mode {
+    font-weight: bold;
+    border: none;
+    outline: none;
+    width: 105px;
+    background-color: aquamarine;
+    padding: 8px 0;
+    font-size: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.darklight-mode:hover {
+    opacity: 0.35;
 }
