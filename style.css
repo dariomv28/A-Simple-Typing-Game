@@ -60,14 +60,14 @@ body {
 .content-box .content {
     display: block; 
     margin-top: 20px;
-    padding: 12px 0;
+    padding: 10px 0;
     align-items: center ;
     justify-content: space-between;
 }
 
 .content .result-details {
     display: flex;
-    width: calc(100% - 140px);
+    width: 100%;
     justify-content: space-between;
     margin-bottom: 20px;
 }
@@ -90,7 +90,7 @@ body {
 }
 
 .result-details li:not(:first-child){
-    padding-left: 10px;
+    padding-left: 100px;
 }
 
 .result-details li b{
@@ -158,5 +158,5 @@ body {
 
 .clear {
     clear: both;
-    height: 20px; 
+    height: 5px; 
 }
