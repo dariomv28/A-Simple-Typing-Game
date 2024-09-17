@@ -5,8 +5,6 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-
 body {
     display: flex;
     background-color: aqua;
@@ -16,7 +14,6 @@ body {
     background: linear-gradient(to bottom left, #007acc, #6DD5FA, #FFFFFF);
     
 }
-
 .wrapper {
     background-color: white;
     border-radius: 25px;
@@ -24,23 +21,18 @@ body {
     width: 1200px;
     height: auto;
 }
-
 .wrapper .input-field {
     opacity: 0;
     z-index: -999;
     position: absolute;
 }
-
-
 .wrapper .content-box {
     padding: 10px 10px 0;
 }
-
 .content-box .typing-text {
     max-height: 350px;
     overflow: auto;
 }
-
 .typing-text p{
     font-size: 30px;
     word-break: break-word;
@@ -52,11 +44,9 @@ body {
     padding-right: 25px;
     line-height: 42px;
 }
-
 .typing-text::-webkit-scrollbar {
     width: 0px;
 }
-
 .content-box .content {
     display: block; 
     margin-top: 20px;
@@ -64,45 +54,32 @@ body {
     align-items: center ;
     justify-content: space-between;
 }
-
 .content .result-details {
     display: flex;
     width: 100%;
     justify-content: space-between;
     margin-bottom: 20px;
 }
-
 .result-details li {
     height: 22px;
     display:-webkit-inline-flex;
     list-style: none;
     align-items: center;
 }
-
 .result-details li p{
     font-size: 20px;
 }
-
 .result-details li span{
     display: block;
     font-size: 20px;
     margin-left: 10px;
 }
-
 .result-details li:not(:first-child){
     padding-left: 100px;
 }
-
 .result-details li b{
     font-weight: 500;
 }
-
-
-
-
-
-
-
 .content .result-details .try-again-button {
     font-weight: bold;
     border: none;
@@ -115,18 +92,11 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
 }
-
 .content .result-details .try-again-button:hover {
     background-color: lightcoral; 
     opacity: 0.8; 
     box-shadow: 2px 3px 11px 5px rgba(0,0,0,0.42);
 }
-
-
-
-
-
-
 .typing-text p span {
     position: relative;
     color: lightgray;
@@ -135,15 +105,12 @@ body {
 .typing-text p span.active {
     color: #0099ff;
 }
-
 .typing-text p span.correct {
     color:  rgb(153, 255, 0);
 }
 .typing-text p span.incorrect {
     color: rgb(255, 0, 0);
 }
-
-
 .typing-text p span.active::before {
     position : absolute;
     content: "";
@@ -154,26 +121,21 @@ body {
     border-radius: 10px;
     background: #0099ff;
 }
-
-
 .content .info {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
-
 .info li {
     height: 22px;
     display:-webkit-inline-flex;
     list-style: none;
     align-items: center;
 }
-
 .clear {
     clear: both;
     height: 5px; 
 }
-
 .adjust-time {
     font-weight: bold;
     border: none;
@@ -186,11 +148,9 @@ body {
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
-
 .adjust-time:hover {
     opacity: 0.35;
 }
-
 .adjust-paragraph {
     font-weight: bold;
     border: none;
@@ -203,11 +163,9 @@ body {
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
-
 .adjust-paragraph:hover {
     opacity: 0.35;
 }
-
 .darklight-mode {
     font-weight: bold;
     border: none;
@@ -220,6 +178,7 @@ body {
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
+
 
 .darklight-mode:hover {
     opacity: 0.35;
