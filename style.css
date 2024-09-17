@@ -162,7 +162,7 @@ body {
     border-radius: 15px;
     cursor: pointer;
     transition: opacity 0.3s ease;
-}
+} 
 .adjust-paragraph:hover {
     opacity: 0.35;
 }
@@ -178,8 +178,15 @@ body {
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
-
-
 .darklight-mode:hover {
     opacity: 0.35;
+}
+.time-input {
+
+}
+.paragraph-input {
+
+}
+.on-off {
+
 }
