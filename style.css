@@ -182,10 +182,74 @@ body {
     opacity: 0.35;
 }
 .time-input {
-
+    position: absolute;
+    top: 580px;
+    right: 993px;
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    height: 90px;
+    pointer-events: none;
 }
-.paragraph-input {
 
+li:hover .time-input {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+.time-input input {
+    padding: 5px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.submit-button {
+    margin-top: 2px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #FFFFFF;
+    transition: background-color 0.1s ease;
+}
+
+.submit-button:active {
+    background-color: rgb(254, 254, 0);
+}
+
+
+
+.paragraph-input {
+    position: absolute;
+    top: 580px;
+    right: 495px;
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    height: 90px;
+    pointer-events: none;
+}
+
+.paragraph-input input {
+    padding: 5px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+li:hover .paragraph-input {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
 }
 .on-off {
 
