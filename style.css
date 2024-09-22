@@ -169,7 +169,7 @@ body {
 
 .time-input {
     position: absolute;
-    top: 580px;
+    top: 590px;
     right: 993px;
     background-color: aquamarine;
     padding: 10px;
@@ -180,7 +180,6 @@ body {
     height: 90px;
     pointer-events: none;
 }
-
 li:hover .time-input {
     opacity: 1;
     transform: translateY(0);
@@ -193,7 +192,6 @@ li:hover .time-input {
     border-radius: 10px;
     background-color: #FFFFFF;
 }
-
 .submit-button {
     margin-top: 2px;
     cursor: pointer;
@@ -203,16 +201,12 @@ li:hover .time-input {
     background-color: #FFFFFF;
     transition: background-color 0.1s ease;
 }
-
 .submit-button:active {
     background-color: rgb(254, 254, 0);
 }
-
-
-
 .paragraph-input {
     position: absolute;
-    top: 580px;
+    top: 590px;
     right: 532px;
     background-color: aquamarine;
     padding: 10px;
@@ -223,7 +217,6 @@ li:hover .time-input {
     height: 90px;
     pointer-events: none;
 }
-
 .paragraph-input input {
     padding: 5px;
     width: 200px;
@@ -231,34 +224,28 @@ li:hover .time-input {
     border-radius: 10px;
     background-color: #FFFFFF;
 }
-
 li:hover .paragraph-input {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
 }
-
-
 .darkmode {
     font-size: 20px;
     font-weight: bold;
     display:inline-block;
     margin-right: 15px;
 }
-
 .switch {
     position: relative;
     width: 60px;
     height: 34px;
     display: inline-block;
 }
-
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
-
 .slider {
     position: absolute;
     cursor: pointer;
@@ -270,7 +257,6 @@ li:hover .paragraph-input {
     border-radius: 34px;
     transition: 0.2s;
 }
-
 .slider:before {
     position: absolute;
     content: "";
@@ -282,11 +268,9 @@ li:hover .paragraph-input {
     left: 4px;
     bottom: 4px;
 }
-
 input:checked + .slider {
     background-color: #007acc;
 }
-
 input:checked + .slider:before {
     transform: translateX(26px);
 }

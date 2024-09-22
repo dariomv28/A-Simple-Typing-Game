@@ -22,8 +22,8 @@ const paragraphs = [
 ];
 
 let timer,
-maxTime = 60,
-timeLeft = maxTime,
+defaultTime = 60,
+timeLeft = defaultTime,
 charidx = mistakes = isTyping = 0;
 
 const text = document.querySelector(".typing-text p"),
@@ -32,28 +32,28 @@ mistaketag = document.querySelector(".mistake span"),
 WPMtag = document.querySelector(".wpm span b"),
 CPMtag = document.querySelector(".cpm span b"),
 buttonTag = document.querySelector(".content button");
-inputBox = document.querySelector(".wrapper .input-field");
-
+inputBox = document.querySelector(".wrapper .input-field"),
+timeInp = document.querySelector(".time-input input"),
+timeSubmitButton = document.querySelector(".time-input .submit-button");
+paragraphInp = document.querySelector(".paragraph-input input");
+paragraphSubmitButton = document.querySelector(".paragraph-input .submit-button");
 
 function load() {
     let index = Math.floor(Math.random() * paragraphs.length);
     text.innerHTML = "";
     paragraphs[index].split("").forEach(char => {
         let span = `<span>${char}</span>`
-
         text.innerHTML += span;  // Each character is wrapped by a span tag
-
     });
     text.querySelectorAll("span")[0].classList.add("active");
-    document.addEventListener("keydown", () => inputBox.focus());
+    document.addEventListener("keydown", () => inputBox.focus());    // type into the inputBox
     text.addEventListener("click", () => inputBox.focus());
 }
-
 function typing() {
     let allCharacters = text.querySelectorAll("span");
     let insertedChar = inputBox.value.split("")[charidx];
     if (charidx < allCharacters.length && timeLeft > 0) {
-        if (!isTyping) {
+        if (!isTyping) {           // only apply for the first character
             timetag.innerText = timeLeft;
             timer = setInterval(setTime, 1000);
             isTyping = true;
@@ -85,7 +85,7 @@ function typing() {
         if(allCharacters[charidx]) {
             allCharacters[charidx].classList.add("active")
         }
-        let wpm = Math.round(((charidx  - mistakes)/5) / (maxTime - timeLeft) *60);
+        let wpm = Math.round(((charidx  - mistakes)/5) / (defaultTime - timeLeft) *60);
         wpm = wpm < 0 || wpm == null || wpm == Infinity? 0 : wpm;
         WPMtag.innerText = wpm;
         mistaketag.innerText = mistakes;
@@ -96,24 +96,22 @@ function typing() {
         inputBox.value = "";
     }
 }
-
 function setTime() {
     if (timeLeft > 0) {
         timeLeft--;
         timetag.innerText = timeLeft;
-        let wpm = Math.round(((charidx - mistakes)/5) / (maxTime - timeLeft) * 60);
+        let wpm = Math.round(((charidx - mistakes)/5) / (defaultTime - timeLeft) * 60);
         WPMtag.innerText = wpm;
     }
     else {
         clearInterval(timer);
     }
 }
-
 function tryAgain() {
     load();
     clearInterval(timer);
     inputBox.value = "";
-    timeLeft = maxTime;
+    timeLeft = defaultTime;
     timetag.innerText = "";
     charidx = 0;
     mistakes =  0;
@@ -122,7 +120,59 @@ function tryAgain() {
     mistaketag.innerText = "";
     CPMtag.innerText = "";
 }
-
 load();
 inputBox.addEventListener("input", typing);
 buttonTag.addEventListener("click", tryAgain);
+timeInp.addEventListener("click", (event) => {
+    event.stopPropagation();
+    document.removeEventListener("keydown", () => {inputBox.focus()});
+    document.addEventListener("keydown", () => {timeInp.focus()});
+});
+timeSubmitButton.addEventListener("click", () => {
+    document.removeEventListener("keydown", () => {timeInp.focus()});
+    document.addEventListener("keydown", () => {inputBox.focus()})
+    const newtime = parseInt(timeInp.value);
+    if(!isNaN(newtime) && newtime > 0) {
+        defaultTime = newtime;
+        alert("Time has been updated");
+        tryAgain();
+    }
+    else {
+        alert("Please enter a positive integer.");
+    }
+});
+paragraphInp.addEventListener("click", (event) => {
+    event.stopPropagation();
+    document.removeEventListener("keydown", () => {inputBox.focus()});
+    document.addEventListener("keydown", () => {paragraphInp.focus()});
+});
+paragraphSubmitButton.addEventListener("click", () => {
+    document.removeEventListener("keydown", () => {paragraphInp.focus()});
+    document.addEventListener("keydown", () => {inputBox.focus()});
+    const newParagraph = paragraphInp.value;
+    if(newParagraph.length > 0) {
+        alert("Your paragraph has been updated.");
+        // load new paragraph here
+        text.innerHTML = "";
+        newParagraph.split("").forEach(char => {
+            let span = `<span>${char}</span>`
+            text.innerHTML += span;
+        });
+        text.querySelectorAll("span")[0].classList.add("active");
+        document.addEventListener("keydown", () => inputBox.focus());    // type into the inputBox
+        text.addEventListener("click", () => inputBox.focus());
+        clearInterval(timer);
+        inputBox.value = "";
+        timeLeft = defaultTime;
+        timetag.innerText = "";
+        charidx = 0;
+        mistakes =  0;
+        isTyping = 0;
+        WPMtag.innerText = "";
+        mistaketag.innerText = "";
+        CPMtag.innerText = "";
+    }
+    else {
+        alert("Please enter your paragraph.");
+    }
+});
