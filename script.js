@@ -42,7 +42,7 @@ function load() {
     let index = Math.floor(Math.random() * paragraphs.length);
     text.innerHTML = "";
     paragraphs[index].split("").forEach(char => {
-        let span = `<span>${char}</span>`
+        let span = `<span>${char}</span>`;
         text.innerHTML += span;  // Each character is wrapped by a span tag
     });
     text.querySelectorAll("span")[0].classList.add("active");
@@ -107,7 +107,7 @@ function setTime() {
         clearInterval(timer);
     }
 }
-function tryAgain() {
+function restart() {
     load();
     clearInterval(timer);
     inputBox.value = "";
@@ -122,7 +122,7 @@ function tryAgain() {
 }
 load();
 inputBox.addEventListener("input", typing);
-buttonTag.addEventListener("click", tryAgain);
+buttonTag.addEventListener("click", restart);
 timeInp.addEventListener("click", (event) => {
     event.stopPropagation();
     document.removeEventListener("keydown", () => {inputBox.focus()});
@@ -135,7 +135,7 @@ timeSubmitButton.addEventListener("click", () => {
     if(!isNaN(newtime) && newtime > 0) {
         defaultTime = newtime;
         alert("Time has been updated");
-        tryAgain();
+        restart();
     }
     else {
         alert("Please enter a positive integer.");
@@ -155,7 +155,7 @@ paragraphSubmitButton.addEventListener("click", () => {
         // load new paragraph here
         text.innerHTML = "";
         newParagraph.split("").forEach(char => {
-            let span = `<span>${char}</span>`
+            let span = `<span>${char}</span>`;
             text.innerHTML += span;
         });
         text.querySelectorAll("span")[0].classList.add("active");
